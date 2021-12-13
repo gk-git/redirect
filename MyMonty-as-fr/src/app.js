@@ -15,3 +15,30 @@ document.querySelectorAll('.navigation__select__option .title').forEach(element 
         })
     })
 })
+
+// Set a Cookie
+function setCookie(cName, cValue, expDays) {
+    let date = new Date();
+    date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+}
+
+document.querySelectorAll('.languages .language').forEach(element => {
+    element.addEventListener('click', function (event) {
+        event.preventDefault()
+        let lang = 'en';
+        switch (this.innerText) {
+            case "Arabic":
+                lang = 'ar';
+                break;
+            case "French":
+                lang = 'fr';
+                break;
+            case "Español":
+                lang = 'es';
+                break;
+        }
+        setCookie('lang', lang, 120);
+    })
+})
