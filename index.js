@@ -1,6 +1,8 @@
 const express = require('express')
-const app = express()
 const fetch = require('node-fetch');
+const cookieParser = require("cookie-parser");
+const app = express();
+app.use(cookieParser());
 const port = 3000;
 class DataCache {
     constructor(fetchFunction, minutesToLive = 10) {
@@ -95,7 +97,11 @@ const regions = [
         ]
     },
 ];
+
 app.get('/', (req, res) => {
+    console.log('req.cookies', req.cookies);
+
+    const preferedLang = req.cookies.lang;
     // res.send('Hello World!')
     const clientIp = getClientIP(req);
     ipDataCache.getData(clientIp)
@@ -107,6 +113,11 @@ app.get('/', (req, res) => {
 })
 regions.forEach(region => {
     app.get(`/${region.slug}`, function (req, res) {
+        console.log('req.cookies', req.cookies)
+        const preferedLang = req.cookies.lang;
+        if (region.languages.includes(preferedLang)) {
+            res.redirect(`/${region.slug}-${preferedLang}`)
+        }
         res.redirect(`/${region.slug}-${region.languages[0]}`)
     })
 })
