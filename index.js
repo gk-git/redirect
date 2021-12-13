@@ -117,8 +117,9 @@ regions.forEach(region => {
         const preferedLang = req.cookies.lang;
         if (region.languages.includes(preferedLang)) {
             res.redirect(`/${region.slug}-${preferedLang}`)
+        } else {
+            res.redirect(`/${region.slug}-${region.languages[0]}`)
         }
-        res.redirect(`/${region.slug}-${region.languages[0]}`)
     })
 })
 app.listen(port, () => {
