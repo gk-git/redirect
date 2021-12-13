@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const fetch = require('node-fetch');
 const port = 3000
 var requestIp = require('request-ip');
 app.get('/', (req, res) => {
