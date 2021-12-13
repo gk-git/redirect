@@ -26,7 +26,6 @@ function setCookie(cName, cValue, expDays) {
 
 document.querySelectorAll('.languages .language').forEach(element => {
     element.addEventListener('click', function (event) {
-        event.preventDefault()
         let lang = 'en';
         switch (this.innerText) {
             case "Arabic":
