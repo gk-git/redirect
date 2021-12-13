@@ -98,6 +98,17 @@ const regions = [
     },
 ];
 
+function isAmericaCountry(countryCode) {
+    return ['CA', 'US', 'MX', 'BR', 'GL', 'AI', 'AG', 'AW'
+        , 'BS'
+        , 'VE'
+        , 'AR'
+    ].includes(countryCode.toUpperCase())
+}
+
+function isAsiaCountry(countryCode) {
+    return ['LB', 'SY', 'AE', 'SA', 'TR', 'CN', 'HK', 'IN'].includes(countryCode.toUpperCase())
+}
 app.get('/', (req, res) => {
     console.log('req.cookies', req.cookies);
 
@@ -108,6 +119,28 @@ app.get('/', (req, res) => {
         .then((result) => {
             // do some stuff with result
             console.log('result', result);
+            if (isAmericaCountry(result.country)) {
+                const region = regions.find(region => region.slug === 'us')
+                if (region.languages.includes(preferedLang)) {
+                    res.redirect(`/us-${preferedLang}`)
+                } else {
+                    res.redirect(`/us-en`);
+                }
+            } else if (isAsiaCountry(result.country)) {
+                const region = regions.find(region => region.slug === 'as')
+                if (region.languages.includes(preferedLang)) {
+                    res.redirect(`/as-${preferedLang}`)
+                } else {
+                    res.redirect(`/as-ar`);
+                }
+            } else {
+                const region = regions.find(region => region.slug === 'eu')
+                if (region.languages.includes(preferedLang)) {
+                    res.redirect(`/eu-${preferedLang}`)
+                } else {
+                    res.redirect(`/eu-fr`);
+                }
+            }
             res.send(result)
         });
 })
