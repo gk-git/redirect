@@ -67,16 +67,7 @@ function getClientIPInfo(clientIp) {
 const ipDataCache = new DataCache(getClientIPInfo, 10);
 
 const regions = [
-    {
-        name: 'USA',
-        slug: 'us',
-        isDefault: false,
-        languages: [
-            'en',
-            'es',
-            'fr'
-        ]
-    },
+
     {
         name: 'Europe',
         slug: 'eu',
@@ -84,16 +75,25 @@ const regions = [
         languages: [
             'en',
             'fr',
-            'es',
         ]
     },
     {
-        name: 'France',
-        slug: 'fr',
+        name: 'Asia',
+        slug: 'as',
         isDefault: false,
         languages: [
-            'fr',
+            'ar',
             'en',
+            'fr',
+        ]
+    },
+    {
+        name: 'USA',
+        slug: 'us',
+        isDefault: false,
+        languages: [
+            'en',
+            'es',
         ]
     },
 ];
