@@ -98,7 +98,7 @@ const regions = [
 app.get('/', (req, res) => {
     // res.send('Hello World!')
     const clientIp = getClientIP(req);
-    ipDataCache.getData("167.94.138.42")
+    ipDataCache.getData(clientIp)
         .then((result) => {
             // do some stuff with result
             console.log('result', result);
