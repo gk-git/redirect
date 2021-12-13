@@ -141,7 +141,6 @@ app.get('/', (req, res) => {
                     res.redirect(`/eu-fr`);
                 }
             }
-            res.send(result)
         });
 })
 regions.forEach(region => {
