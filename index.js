@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     console.log({
         ip
     })
-    var clientIp = requestIp.getClientIp(request);
+    var clientIp = requestIp.getClientIp(req);
     console.log(clientIp);
     res.send(clientIp)
     // fetch("https://ipinfo.io/json?token=3643b3284205a4").then(
