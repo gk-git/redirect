@@ -14,12 +14,18 @@ app.get('/', (req, res) => {
         clientIp = clientIp.substr(7)
     }
     console.log(clientIp);
-    res.send(clientIp)
-    // fetch("https://ipinfo.io/json?token=3643b3284205a4").then(
-    //     (response) => response.json()
-    // ).then(
-    //     (jsonResponse) => console.log(jsonResponse.ip, jsonResponse.country)
-    // )
+    fetch(`https://ipinfo.io/${clientIp}?token=3643b3284205a4`).then(
+        (response) => response.json()
+    ).then(
+        (jsonResponse) => {
+            switch (jsonResponse.country) {
+                case "LB":
+                    return res.send("Lebanon 1")
+                default:
+                    return res.send('Default');
+            }
+        }
+    )
 })
 
 app.listen(port, () => {
