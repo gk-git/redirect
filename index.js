@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
         ip
     })
     var clientIp = requestIp.getClientIp(req);
+
+    if (clientIp.substr(0, 7) == "::ffff:") {
+        clientIp = clientIp.substr(7)
+    }
     console.log(clientIp);
     res.send(clientIp)
     // fetch("https://ipinfo.io/json?token=3643b3284205a4").then(
