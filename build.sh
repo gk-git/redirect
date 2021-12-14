@@ -11,3 +11,7 @@ cd ../;
 cd MyMonty-us-en && npm run build;
 cd ../;
 cd MyMonty-us-es && npm run build;
+cd ../;
+cd MyMonty-uk-en && npm run build;
+cd ../;
+cd MyMonty-uk-fr && npm run build;

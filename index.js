@@ -69,6 +69,15 @@ const ipDataCache = new DataCache(getClientIPInfo, 10);
 const regions = [
 
     {
+        name: 'United Kingdom',
+        slug: 'uk',
+        isDefault: true,
+        languages: [
+            'en',
+            'fr',
+        ]
+    },
+    {
         name: 'Europe',
         slug: 'eu',
         isDefault: true,
@@ -105,7 +114,9 @@ function isAmericaCountry(countryCode) {
         , 'AR'
     ].includes(countryCode.toUpperCase())
 }
-
+function isUKCountry(countryCode) {
+    return ['GB'].includes(countryCode)
+}
 function isAsiaCountry(countryCode) {
     return ['LB', 'SY', 'AE', 'SA', 'TR', 'CN', 'HK', 'IN'].includes(countryCode.toUpperCase())
 }
@@ -132,6 +143,13 @@ app.get('/', (req, res) => {
                     res.redirect(`/as-${preferedLang}`)
                 } else {
                     res.redirect(`/as-ar`);
+                }
+            } else if (isUKCountry(result.country)) {
+                const region = regions.find(region => region.slug === 'as')
+                if (region.languages.includes(preferedLang)) {
+                    res.redirect(`/uk-${preferedLang}`)
+                } else {
+                    res.redirect(`/uk-en`);
                 }
             } else {
                 const region = regions.find(region => region.slug === 'eu')
