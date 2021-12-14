@@ -1,0 +1,13 @@
+cd MyMonty-as-ar && npm run build;
+cd ../;
+cd MyMonty-as-en && npm run build;
+cd ../;
+cd MyMonty-as-fr && npm run build;
+cd ../;
+cd MyMonty-eu-en && npm run build;
+cd ../;
+cd MyMonty-eu-fr && npm run build;
+cd ../;
+cd MyMonty-us-en && npm run build;
+cd ../;
+cd MyMonty-us-es && npm run build;
