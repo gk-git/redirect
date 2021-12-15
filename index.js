@@ -71,55 +71,60 @@ const regions = [
     {
         name: 'United Kingdom',
         slug: 'uk',
-        isDefault: true,
+        isDefault: false,
         languages: [
             'en',
-            'fr',
+            'it',
+            'pl',
         ]
     },
     {
-        name: 'Europe',
+        name: 'Poland',
+        slug: 'pl',
+        isDefault: false,
+        languages: [
+            'pl',
+            'en',
+            'it',
+        ]
+    },
+    {
+        name: 'Italy',
+        slug: 'pl',
+        isDefault: false,
+        languages: [
+            'it',
+            'en',
+            'pl',
+        ]
+    },
+    {
+        name: 'Global',
         slug: 'eu',
         isDefault: true,
         languages: [
             'en',
-            'fr',
-        ]
-    },
-    {
-        name: 'Asia',
-        slug: 'as',
-        isDefault: false,
-        languages: [
-            'ar',
-            'en',
-            'fr',
-        ]
-    },
-    {
-        name: 'USA',
-        slug: 'us',
-        isDefault: false,
-        languages: [
-            'en',
-            'es',
+            'it',
+            'pl',
         ]
     },
 ];
 
-function isAmericaCountry(countryCode) {
-    return ['CA', 'US', 'MX', 'BR', 'GL', 'AI', 'AG', 'AW'
-        , 'BS'
-        , 'VE'
-        , 'AR'
-    ].includes(countryCode.toUpperCase())
-}
+
 function isUKCountry(countryCode) {
     return ['GB'].includes(countryCode)
 }
-function isAsiaCountry(countryCode) {
-    return ['LB', 'SY', 'AE', 'SA', 'TR', 'CN', 'HK', 'IN'].includes(countryCode.toUpperCase())
+
+
+function isItalyCountry(countryCode) {
+    return ['IT'].includes(countryCode)
 }
+
+
+function isPolandCountry(countryCode) {
+    return ['PL'].includes(countryCode)
+}
+
 app.get('/', (req, res) => {
     console.log('req.cookies', req.cookies);
 
@@ -130,33 +135,33 @@ app.get('/', (req, res) => {
         .then((result) => {
             // do some stuff with result
             console.log('result', result);
-            if (isAmericaCountry(result.country)) {
+            if (isUKCountry(result.country)) {
                 const region = regions.find(region => region.slug === 'us')
                 if (region.languages.includes(preferedLang)) {
-                    res.redirect(`/us-${preferedLang}`)
+                    res.redirect(`/${preferedLang}-uk`)
                 } else {
-                    res.redirect(`/us-en`);
+                    res.redirect(`/en-uk`);
                 }
-            } else if (isAsiaCountry(result.country)) {
+            } else if (isItalyCountry(result.country)) {
                 const region = regions.find(region => region.slug === 'as')
                 if (region.languages.includes(preferedLang)) {
-                    res.redirect(`/as-${preferedLang}`)
+                    res.redirect(`/${preferedLang}-it`)
                 } else {
-                    res.redirect(`/as-ar`);
+                    res.redirect(`/it-it`);
                 }
-            } else if (isUKCountry(result.country)) {
+            } else if (isPolandCountry(result.country)) {
                 const region = regions.find(region => region.slug === 'as')
                 if (region.languages.includes(preferedLang)) {
-                    res.redirect(`/uk-${preferedLang}`)
+                    res.redirect(`/${preferedLang}-pl`)
                 } else {
-                    res.redirect(`/uk-en`);
+                    res.redirect(`/en-pl`);
                 }
             } else {
                 const region = regions.find(region => region.slug === 'eu')
                 if (region.languages.includes(preferedLang)) {
-                    res.redirect(`/eu-${preferedLang}`)
+                    res.redirect(`/${preferedLang}-eu`)
                 } else {
-                    res.redirect(`/eu-fr`);
+                    res.redirect(`/en-eu`);
                 }
             }
         });
@@ -166,9 +171,9 @@ regions.forEach(region => {
         console.log('req.cookies', req.cookies)
         const preferedLang = req.cookies.lang;
         if (region.languages.includes(preferedLang)) {
-            res.redirect(`/${region.slug}-${preferedLang}`)
+            res.redirect(`/${preferedLang}-${region.slug}`)
         } else {
-            res.redirect(`/${region.slug}-${region.languages[0]}`)
+            res.redirect(`/${region.languages[0]}-${region.slug}`)
         }
     })
 })
