@@ -11,7 +11,11 @@ export class MyComponent {
     return (
       <div class="my-component">
         <div class="my-component--container">
-          <text-with-color></text-with-color>
+          <hero-section></hero-section>
+          <div class="wrapper">
+            {/* <text-with-color></text-with-color> */}
+            <contact-form></contact-form>
+          </div>
         </div>
       </div>
     );
