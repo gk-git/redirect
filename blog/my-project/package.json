@@ -1,0 +1,32 @@
+{
+  "name": "my-project",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "develop2": "strapi develop --watch-admin",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-graphql": "4.0.0",
+    "@strapi/plugin-i18n": "4.0.0",
+    "@strapi/plugin-users-permissions": "4.0.0",
+    "@strapi/strapi": "4.0.0",
+    "sqlite3": "5.0.2"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "49f7bf46-e0c0-4b3e-b9b0-92b406bf39a6"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

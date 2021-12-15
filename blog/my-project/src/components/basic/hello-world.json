@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_basic_hello_worlds",
+  "info": {
+    "displayName": "Hello World",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "rich_text": {
+      "type": "richtext"
+    }
+  }
+}
