@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+.red {
+  background-color: rebeccapurple;
+  height: 300px;
+  width: 300px;
+  display: block;
+  color: white;
+}
