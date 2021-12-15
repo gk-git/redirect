@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'about-web',
@@ -9,9 +9,10 @@ export class AboutWeb {
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <div class="wrapper">
+        <text-with-color></text-with-color>
+        {/* <contact-form></contact-form> */}
+      </div>
     );
   }
 
