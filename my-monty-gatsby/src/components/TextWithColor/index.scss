@@ -1,0 +1,58 @@
+@import "../../brand/global/mixin";
+.text-with-color {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 950px;
+}
+.text-with-color--container {
+  @include container;
+}
+
+.text-with-color__logo svg {
+  fill: #000;
+}
+.text-with-color__logo svg g {
+  mix-blend-mode: color-burn;
+}
+.text-with-color__title {
+  font-size: 4rem;
+}
+
+.text-with-color__first {
+  font-size: 2.5rem;
+  line-height: 62px;
+  margin-top: 3.75rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.text-with-color__first span {
+  animation: zoom 3s infinite;
+  -webkit-animation: zoom 3s infinite;
+  font-size: 3.75rem;
+  transition: transform 3s;
+}
+.text-with-color__first--orange {
+  color: #ce8062;
+}
+.text-with-color__first--mauve {
+  color: #bd7f9e;
+}
+.text-with-color__first--gray {
+  color: #74869a;
+}
+.text-with-color__first--blue {
+  color: #a5c7d4;
+}
+.text-with-color__second {
+  color: #5a5858;
+  font-weight: 700;
+  line-height: 62px;
+  font-size: 2.5rem;
+
+  strong {
+    font-weight: 300;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000000;
+  }
+}

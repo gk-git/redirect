@@ -1,0 +1,1 @@
+Only do this with Sass files that contain just variables, mixins, functions, etc (Sass features that do not output any actual CSS until they are consumed). Otherwise you will end up with CSS that is repeated multiple times across your project.
