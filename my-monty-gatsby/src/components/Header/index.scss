@@ -1,13 +1,15 @@
 header {
   font-size: 1rem;
   left: 0;
-  padding: 1rem 0;
+  padding: 0 2rem;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 3;
   background-color: #fffc;
   color: #000;
+  backdrop-filter: saturate(180%) blur(20px);
+  background: #fffc;
 }
 header a {
   color: black;

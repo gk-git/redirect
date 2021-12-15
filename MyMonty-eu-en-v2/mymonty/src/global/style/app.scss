@@ -44,7 +44,7 @@ ul {
   padding: 0;
 }
 main {
-  padding-top: calc(80px + 1.5rem);
+  padding-top: calc(80px + 1rem);
 }
 .wrapper {
   height: 100%;
@@ -59,3 +59,5 @@ main {
 .wrapper > * {
   grid-column: 1 / -1;
 }
+
+
