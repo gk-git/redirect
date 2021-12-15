@@ -46,6 +46,10 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
   const nonActiveRegions = getRegionsWithoutActive()
   
   const languages = activeRegion.languages;
+  
+  const handleLanguageChange =  (language) => {
+  
+  }
   return (
     <header className="header" id="header">
       <div className="header__container">
@@ -112,7 +116,9 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
                       languages.map(language => {
                         return (
                           <li className="languages-wrapper__list-language">
-                            <Link to={`/${language.slug}-${activeRegionSlug}`}>
+                            <Link to={`/${language.slug}-${activeRegionSlug}`} onClick={()=> {
+                              handleLanguageChange(language.slug)
+                            }}>
                               <CountryImage name={language.image}/>
                               <span>{language.name}</span>
                             </Link>
