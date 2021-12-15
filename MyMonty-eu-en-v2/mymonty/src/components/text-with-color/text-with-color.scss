@@ -4,40 +4,12 @@
 .text-with-color {
   text-align: center;
   margin: 0 auto;
-  width: 950px;
+  max-width: 950px;
 }
 .text-with-color--container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  width: 100%;
+  @include container;
 }
-@media (min-width: 576px) {
-  .text-with-color--container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .text-with-color--container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .text-with-color--container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .text-with-color--container {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .text-with-color--container {
-    max-width: 1320px;
-  }
-}
+
 .text-with-color__logo svg {
   fill: #000;
 }
@@ -79,4 +51,10 @@
   font-weight: 700;
   line-height: 62px;
   font-size: 2.5rem;
+
+  strong {
+    font-weight: 300;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000000;
+  }
 }

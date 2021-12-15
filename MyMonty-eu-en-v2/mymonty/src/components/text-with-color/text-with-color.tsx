@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'text-with-color',
-  styleUrl: 'text-with-color.css',
+  styleUrl: 'text-with-color.scss',
   shadow: false,
 })
 export class TextWithColor {
@@ -17,7 +17,7 @@ export class TextWithColor {
           <h1 class="text-with-color__title">Who We Are</h1>
           <p class="text-with-color__first">First and foremost, we are your <span class="text-with-color__first--orange">friends!</span> And friends <span class="text-with-color__first--mauve" >care</span>. We are your lifestyle <span class="text-with-color__first--gray" >partners</span> aiming to <span class="text-with-color__first--blue" >build</span> a community where financial exclusion is a thing of the past.</p>
           <p class="text-with-color__second">
-            We believe everyone has the right to have access to basic banking functions
+            We believe everyone has the right to have access to basic <strong>banking functions</strong>
           </p>
         </div>
       </div>

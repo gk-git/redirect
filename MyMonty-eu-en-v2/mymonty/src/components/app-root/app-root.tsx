@@ -1,5 +1,5 @@
 import "@stencil/router";
-import { LocationSegments, RouterHistory } from "@stencil/router";
+import { RouterHistory } from "@stencil/router";
 import { Component, Element, Listen, State, h } from "@stencil/core";
 
 import SiteProviderConsumer, {
@@ -36,16 +36,16 @@ export class AppRoot {
   private setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
       this.history = history;
-      this.history.listen((location: LocationSegments) => {
-        // Google Analytics
-        // (window as any).gtag("config", "UA-44023830-34", {
-        //   page_path: location.pathname + location.search
-        // });
+      // this.history.listen((location: LocationSegments) => {
+      // Google Analytics
+      // (window as any).gtag("config", "UA-44023830-34", {
+      //   page_path: location.pathname + location.search
+      // });
 
-        // Hubspot
-        // (window as any)._hsq.push(['setPath', location.pathname + location.search ]);
-        // (window as any)._hsq.push(['trackPageView']);
-      });
+      // Hubspot
+      // (window as any)._hsq.push(['setPath', location.pathname + location.search ]);
+      // (window as any)._hsq.push(['trackPageView']);
+      // });
     }
   };
 
@@ -86,6 +86,8 @@ export class AppRoot {
     };
     return (
       <SiteProviderConsumer.Provider state={siteState}>
+        <rotating-compass></rotating-compass>
+
         <web-header />
         <main>
           <stencil-router scrollTopOffset={0}>
@@ -95,11 +97,12 @@ export class AppRoot {
             />
             <stencil-route-switch>
               <stencil-route url="/" component="my-component" exact={true} />
-              <stencil-route url="/about" component="web-about" exact={true} />
+              <stencil-route url="/about" component="about-web" exact={true} />
             </stencil-route-switch>
 
           </stencil-router>
         </main>
+        <footer-section></footer-section>
       </SiteProviderConsumer.Provider>
     );
   }
