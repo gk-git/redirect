@@ -1,8 +1,8 @@
 import { Config } from '@stencil/core';
-
+import { sass } from '@stencil/sass';
 export const config: Config = {
   namespace: 'mymonty',
-  globalStyle: 'src/global/style/app.css',
+  globalStyle: 'src/global/style/app.scss',
   outputTargets: [
     {
       type: 'dist',
@@ -18,5 +18,10 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+  ],
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/global/style/app.scss'],
+    }),
   ],
 };
