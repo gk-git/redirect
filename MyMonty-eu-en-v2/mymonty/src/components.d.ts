@@ -15,6 +15,9 @@ export namespace Components {
     interface FooterSection {
     }
     interface HeroSection {
+        "image": string;
+        "text": string;
+        "title": string;
     }
     interface MenuToggleIcon {
     }
@@ -129,6 +132,9 @@ declare namespace LocalJSX {
     interface FooterSection {
     }
     interface HeroSection {
+        "image"?: string;
+        "text"?: string;
+        "title"?: string;
     }
     interface MenuToggleIcon {
     }
