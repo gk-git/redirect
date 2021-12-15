@@ -43,8 +43,9 @@ header a {
   align-items: center;
   justify-content: space-between;
   width: auto;
+  z-index: 2;
 }
-.desktop-nav__logo > a svg {
+.desktop-nav__logo a svg {
   fill: black;
   display: block;
 }
@@ -96,17 +97,17 @@ header a {
   font-weight: 900;
 }
 
-.desktop-nav__tabs button {
+.desktop-nav__tabs a {
   -webkit-appearance: none;
   background: transparent;
   border: none;
   color: var(--primary-color);
   padding: 1rem 0.6rem;
   transition: color 0.5s ease-in-out;
-}
-.desktop-nav__tabs button:hover {
-  background: none;
-  color: #346edf;
+  &.active,
+  &:hover {
+    color: #346edf;
+  }
 }
 
 [type='button']:not(:disabled),
@@ -124,6 +125,13 @@ button:not(:disabled) {
   align-items: center;
   justify-content: center;
   display: flex;
+
+  svg {
+    transform: rotate(180deg);
+    @media (min-width: 1200px) {
+      transform: rotate(0);
+    }
+  }
 }
 .selected-language {
   margin-left: 0.5rem;
@@ -134,16 +142,18 @@ button:not(:disabled) {
 }
 .languages {
   -ms-overflow-style: none;
-  background: var(--secondary-color);
+  background: #fff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  display: none;
+  // display: none;
+  height: 0;
   font-size: 1rem;
   left: 0;
   overflow: scroll;
   position: absolute;
   scrollbar-width: none;
   top: calc(1rem + 45px);
+  transition: all 0.5s ease-in-out;
 }
 .languages::-webkit-scrollbar {
   display: none;
@@ -152,8 +162,17 @@ button:not(:disabled) {
   margin-left: 0.5rem;
 }
 .languages.open {
-  display: block;
+  // display: block;
+  height: auto;
 }
+.desktop-nav.open .languages.open .languages-wrapper {
+  @media (max-width: 1200px) {
+    position: fixed;
+    left: 1em;
+    bottom: 58px;
+  }
+}
+
 .languages-wrapper__list {
   width: max-content;
 }
@@ -208,4 +227,47 @@ button:not(:disabled) {
 }
 .theme-mode__btn svg g {
   mix-blend-mode: color-burn;
+}
+
+// One header solution
+.icon-wrapper {
+  display: none;
+}
+
+@media all and (max-width: 1200px) {
+  .icon-wrapper {
+    display: block;
+  }
+
+  .desktop-nav__tabs {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    // top: 96px; /* header height*/
+    left: -100%;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  .desktop-nav__tabs a {
+    display: block;
+  }
+  .desktop-nav__right {
+    position: fixed;
+    background: #fff;
+    // top: calc(256px + 96px);
+    left: -100%;
+    // height: calc(100vh - 256px - 96px); /* 100vh - tabs - header*/
+    width: 100%;
+    bottom: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .desktop-nav.open {
+    .desktop-nav__tabs {
+      left: 0;
+    }
+    .desktop-nav__right {
+      left: 0;
+    }
+  }
 }

@@ -11,9 +11,14 @@
 
  - [app-root](../app-root)
 
+### Depends on
+
+- [site-button](../site-button)
+
 ### Graph
 ```mermaid
 graph TD;
+  web-header --> site-button
   app-root --> web-header
   style web-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
