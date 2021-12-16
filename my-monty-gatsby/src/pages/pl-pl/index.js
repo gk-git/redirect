@@ -10,11 +10,10 @@ import DefaultLayout from '../../Layouts/DefaultLayout'
 const IndexPage = () => {
   return (
     <DefaultLayout baseUrl={'pl-pl'} languages={Data.languages} activeLanguage="poland" activeRegionSlug="pl">
-      <HeroSection backgroundImage={PolandHeroImage} title="Join our team" text={
-        `Submit your <span class="hero__title__cv">CV</span> or check out our <span class="hero__title__vacancies">vacancies</span> today
-            on <span class="hero__title__linkedin">LinkedIn</span> and we will reach
-            out to you<span class="break"/> once we find
-            a <span class="hero__title__position">position</span> that fits <span class="break"/> your profile.`
+      <HeroSection backgroundImage={PolandHeroImage} title="Dołącz do naszej drużyny" mainText={
+        `Prześlij swoje <span class="hero__title__cv">CV</span> lub sprawdź nasze <span class="hero__title__vacancies">wakaty</span> dzisiaj <span
+ class="hero__title__linkedin">LinkedIn</span> i skontaktujemy się z Tobą <span class="break"/> kiedy znajdziemy <span
+ class="hero__title__position">pozycja</span> to pasuje <span class="break"/> twój profil.`
       }/>
       <div className="wrapper">
         <ContactForm/>
