@@ -156,9 +156,9 @@ function redirectRequests(req, res) {
             } else {
                 const region = regions.find(region => region.slug === 'eu')
                 if (region.languages.includes(preferedLang)) {
-                    res.redirect(`/${preferedLang}-eu`)
+                    return res.redirect(`/${preferedLang}-eu`)
                 } else {
-                    res.redirect(`/en-eu`);
+                    return res.redirect(`/en-eu`);
                 }
             }
         });
@@ -169,9 +169,9 @@ regions.forEach(region => {
         console.log('req.cookies', req.cookies)
         const preferedLang = req.cookies.lang;
         if (region.languages.includes(preferedLang)) {
-            res.redirect(`/${preferedLang}-${region.slug}`)
+            return res.redirect(`/${preferedLang}-${region.slug}`)
         } else {
-            res.redirect(`/${region.languages[0]}-${region.slug}`)
+            return res.redirect(`/${region.languages[0]}-${region.slug}`)
         }
     })
 })
