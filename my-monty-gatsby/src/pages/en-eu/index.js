@@ -22,7 +22,34 @@ const IndexPage = () => {
         }
       }/>
       <div className="wrapper">
-        <ContactForm/>
+        <ContactForm title="Submit your CV"
+                     firstName={{
+                       label: 'First Name',
+                       placeholder: '',
+                     }}
+                     lastName={{
+                       label: 'Last Name',
+                       placeholder: '',
+                     }}
+                     emailAddress={{
+                       label: 'Email Address',
+                       placeholder: '',
+                     }}
+                     position={{
+                       placeholder: '',
+                       label: 'Position Applying For',
+                     }}
+                     additionalInformation={{
+                       placeholder: '',
+                       label: 'Additional Information',
+                     }}
+                     cvUpload={{
+                       label: 'Upload your CV',
+                     }}
+                     submitButton={{
+                       label: 'Submit',
+                     }}
+        />
       </div>
     </DefaultLayout>
   )

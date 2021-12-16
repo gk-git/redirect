@@ -21,7 +21,33 @@ const IndexPage = () => {
         }
       }/>
       <div className="wrapper">
-        <ContactForm/>
+        <ContactForm   title="Prześlij swoje CV"
+                       firstName={{
+                         label: 'Imię',
+                         placeholder: '',
+                       }}
+                       lastName={{
+                         label: 'Nazwisko',
+                         placeholder: '',
+                       }}
+                       emailAddress={{
+                         label: 'Adres E-mail',
+                         placeholder: '',
+                       }}
+                       position={{
+                         placeholder: '',
+                         label: 'Stanowisko Ubiegające Się O Stanowisko',
+                       }}
+                       additionalInformation={{
+                         placeholder: '',
+                         label: 'Dodatkowe Informacje',
+                       }}
+                       cvUpload={{
+                         label: 'Prześlij Swoje CV',
+                       }}
+                       submitButton={{
+                         label: 'Składać',
+                       }}/>
       </div>
     </DefaultLayout>
   )

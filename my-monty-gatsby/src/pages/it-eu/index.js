@@ -21,7 +21,33 @@ const IndexPage = () => {
         }
       }/>
       <div className="wrapper">
-        <ContactForm/>
+        <ContactForm title="Invia Il Tuo CV"
+                     firstName={{
+                       label: 'Nome Di Battesimo',
+                       placeholder: '',
+                     }}
+                     lastName={{
+                       label: 'Cognome',
+                       placeholder: '',
+                     }}
+                     emailAddress={{
+                       label: 'Indirizzo Email',
+                       placeholder: '',
+                     }}
+                     position={{
+                       placeholder: '',
+                       label: 'Posizione Candidata Per',
+                     }}
+                     additionalInformation={{
+                       placeholder: '',
+                       label: 'Informazioni Aggiuntive',
+                     }}
+                     cvUpload={{
+                       label: 'Carica Il Tuo CV',
+                     }}
+                     submitButton={{
+                       label: 'Invia',
+                     }}/>
       </div>
     </DefaultLayout>
   )
