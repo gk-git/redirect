@@ -21,24 +21,24 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
   const windowWidth = useWindowWidth()
   useEffect(() => {
     if (windowWidth !== false && windowWidth > 1200) {
-      setState({
-        ...state,
-        isMobile: false,
-      })
+      if (state.isMobile === true) {
+        setState({
+          ...state,
+          isMobile: false,
+        })
+      }
       console.log('windowWidth', {
         isMobile: false,
-        windowWidth
+        windowWidth,
       })
   
     } else {
-      setState({
-        ...state,
-        isMobile: true,
-      })
-      console.log('windowWidth', {
-        isMobile: true,
-        windowWidth
-      })
+      if (state.isMobile === false) {
+        console.log('windowWidth', {
+          isMobile: true,
+          windowWidth,
+        })
+      }
     }
   }, [windowWidth])
   const handleMenuIconClick = () => {
@@ -83,13 +83,13 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
   function renderMenuSection () {
     return (
       <>
-        
+  
         <div className="desktop-nav__tabs">
-          <Link to={`/${baseUrl}/about`} activeClassName="active">Company</Link>
-          <Link to={`/${baseUrl}/about`} activeClassName="active">Features</Link>
-          <Link to={`/${baseUrl}/about`} activeClassName="active">Plans</Link>
-          <Link to={`/${baseUrl}/about`} activeClassName="active">Help</Link>
-          <div className="menu-pointer"/>
+            <Link to={`/${baseUrl}/about`} activeClassName="active">Company</Link>
+            <Link to={`/${baseUrl}/about`} activeClassName="active">Features</Link>
+            <Link to={`/${baseUrl}/about`} activeClassName="active">Plans</Link>
+            <Link to={`/${baseUrl}/about`} activeClassName="active">Help</Link>
+            <div className="menu-pointer"/>
         </div>
         <div className="desktop-nav__right">
           <div className="languages-toggle" onClick={toggleLanguagesDropdown}>
@@ -105,9 +105,9 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
               <div className="languages-wrapper">
                 <ul className="languages-wrapper__list">
                   {
-                    languages.map(language => {
+                    languages.map((language, index) => {
                       return (
-                        <li className="languages-wrapper__list-language">
+                        <li key={index} className="languages-wrapper__list-language">
                           <Link to={`/${language.slug}-${activeRegionSlug}`} onClick={() => {
                             handleLanguageChange(language.slug)
                           }}>
@@ -148,19 +148,19 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
               <div className="locations-wrapper">
                 <ul className="locations-wrapper__list">
                   {
-                    nonActiveRegions.map(region => {
+                    nonActiveRegions.map((region, index) => {
                       const defaultLanguage = region.languages.find(language => language.isDefault)
                       if (region.isGlobal) {
                         return (
-                          <li className="locations-wrapper__list-location"><Link
+                          <li key={index} className="locations-wrapper__list-location"><Link
                             to={`/${defaultLanguage.slug}-${region.slug}`}> Global</Link>
                           </li>
                         )
                       }
                       return (
-                        <li className="locations-wrapper__list-location"><Link
+                        <li key={index} className="locations-wrapper__list-location"><Link
                           to={`/${defaultLanguage.slug}-${region.slug}`}> <span
-                            className="fw-bolder">My</span>{region.name}</Link>
+                          className="fw-bolder">My</span>{region.name}</Link>
                         </li>
                       )
                     })
@@ -183,7 +183,6 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
               </div>
             ) : renderMenuSection()
           }
-          {/*//*/}
         </div>
       </div>
     </header>

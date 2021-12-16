@@ -8,4 +8,14 @@ button.site-button {
   background: #000;
   color: #fff;
   transition: background-color 0.5s ease-in-out;
+
+  &[type="button"]:not(:disabled),
+  &[type="reset"]:not(:disabled),
+  &[type="submit"]:not(:disabled),
+  &:not(:disabled) {
+    cursor: pointer;
+    margin: 0;
+    outline: none;
+    text-transform: none;
+  }
 }
