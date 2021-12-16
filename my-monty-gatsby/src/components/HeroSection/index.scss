@@ -59,8 +59,10 @@
 }
 
 .hero__title__make {
-  border-bottom: 1px solid black;
-  padding-bottom: 0.1rem;
+  //border-bottom: 1px solid black;
+  //padding-bottom: 0.1rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
 
 .hero__img-container {

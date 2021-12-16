@@ -14,6 +14,11 @@ const IndexPage = () => {
         `Prześlij swoje <span class="hero__title__cv">CV</span> lub sprawdź nasze <span class="hero__title__vacancies">wakaty</span> dzisiaj <span
  class="hero__title__linkedin">LinkedIn</span> i skontaktujemy się z Tobą <span class="break"/> kiedy znajdziemy <span
  class="hero__title__position">pozycja</span> to pasuje <span class="break"/> twój profil.`
+      } subTitle={
+        {
+          help: 'Pomóż nam',
+          make: 'uczynić bankowość dostępną dla wszystkich',
+        }
       }/>
       <div className="wrapper">
         <ContactForm/>

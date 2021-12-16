@@ -15,6 +15,11 @@ const IndexPage = () => {
             on <span class="hero__title__linkedin">LinkedIn</span> and we will reach
             out to you<span class="break"/> once we find
             a <span class="hero__title__position">position</span> that fits <span class="break"/> your profile.`
+      } subTitle={
+        {
+          help: 'Help us',
+          make: 'make banking accessible for all',
+        }
       }/>
       <div className="wrapper">
         <ContactForm/>
