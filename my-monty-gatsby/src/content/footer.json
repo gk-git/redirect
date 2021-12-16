@@ -1,0 +1,38 @@
+{
+  "english": {
+    "subscribe": {
+      "title": "Subscribe to our newsletter",
+      "description": "Enter you email to get the latest news from MyMonty",
+      "emailInput": {
+        "placeholder": "Enter your email"
+      },
+      "submitButton": {
+        "label": "Submit"
+      }
+    }
+  },
+  "italy": {
+    "subscribe": {
+      "title": "Iscriviti alla nostra Newsletter",
+      "description": "Inserisci la tua email per ricevere le ultime notizie da MyMonty",
+      "emailInput": {
+        "placeholder": "Inserisci il tuo indirizzo email"
+      },
+      "submitButton": {
+        "label": "Invia"
+      }
+    }
+  },
+  "poland": {
+    "subscribe": {
+      "title": "Zapisz się do naszego newslettera",
+      "description": "Wpisz swój adres e-mail, aby otrzymywać najnowsze wiadomości z MyMonty",
+      "emailInput": {
+        "placeholder": "Wprowadź swój email"
+      },
+      "submitButton": {
+        "label": "Składać"
+      }
+    }
+  }
+}

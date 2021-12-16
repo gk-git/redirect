@@ -1,18 +1,19 @@
 import React from 'react'
 import "./index.scss";
 
-export default function Footer() {
-  
+import FooterContentFrom from "../../content/footer.json";
+export default function Footer({activeLanguage}) {
+  const { subscribe } = FooterContentFrom[activeLanguage];
   return (
     <footer className="footer-section">
       <div className="footer-section__container">
         <div className="footer-section__wrapper">
           <div className="newsletter-form">
-            <h5 className="newsletter-form__title">Subscribe to our newsletter</h5>
-            <p className="newsletter-form__description">Enter you email to get the latest news from MyMonty</p>
+            <h5 className="newsletter-form__title">{subscribe.title}</h5>
+            <p className="newsletter-form__description">{subscribe.description}</p>
             <form className="newsletter-form__form" action="">
-              <input type="email" placeholder='Enter your email'/>
-              <input type="submit" value="Subscribe"/>
+              <input type="email" placeholder={subscribe.emailInput.placeholder}/>
+              <input type="submit" value={subscribe.submitButton.label}/>
             </form>
           </div>
           <div className="navigations">

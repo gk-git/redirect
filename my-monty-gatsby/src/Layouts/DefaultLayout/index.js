@@ -12,7 +12,7 @@ export default function DefaultLayout ({ children, baseUrl,  activeLanguage, act
       <main>
         {children}
       </main>
-      <Footer/>
+      <Footer activeLanguage={activeLanguage}/>
     </>
   )
 }
