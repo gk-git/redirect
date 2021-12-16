@@ -3,11 +3,11 @@ import TextWithColor from '../../components/TextWithColor'
 import DefaultLayout from '../../Layouts/DefaultLayout'
 import Data from '../../content/pl.json';
 
-export default function AboutPage(){
-  
+export default function AboutPage() {
+
   return (
-    <DefaultLayout baseUrl={'en-eu'} languages={Data.languages} activeLanguage="english" activeRegionSlug="eu" >
-      <TextWithColor/>
+    <DefaultLayout baseUrl={'en-uk'} languages={Data.languages} activeLanguage="english" activeRegionSlug="uk" >
+      <TextWithColor />
     </DefaultLayout>
   )
 }
