@@ -1,13 +1,13 @@
 @import "../../brand/global/mixin";
 .footer-section {
   margin-top: 10em;
-  background: #000;
+  background-color: #000;
   color: #e6e7e8;
   font-size: 1rem;
-  padding: 2.1875rem 0 1.875rem;
 
   &__container {
     @include container;
+    padding-top:5.25em
   }
   &__wrapper {
     display: grid;
@@ -25,9 +25,6 @@
   }
   display: grid;
   grid-template-columns: 30% 30% auto;
-  @media (min-width: 996px) {
-    justify-content: end;
-  }
 }
 .navigation {
   padding-left: 1em;
@@ -63,24 +60,28 @@
     line-height: 1.2rem;
     color: #e6e7e8;
     padding-bottom: 3rem;
+    max-width: 270px;
   }
   &__form {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: 1fr auto;
-    grid-gap: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:1.25em;
+    width:100%;
     input:not([type='submit']) {
       border: 0;
       border-radius: 50rem;
       background-color: white;
-      padding: 0.7em 1.5em;
+      padding: 0.3em 1.5em;
       font-size: 1.5rem;
       width: 100%;
+      max-width:276px;
     }
     input[type='submit'] {
+      border:0;
       background: #6c90bb;
       border-radius: 35px;
-      padding: 0.7em 1.5em;
+      padding: 0.3em  1.5em;
       color: #fff;
       width: max-content;
       &:hover {
