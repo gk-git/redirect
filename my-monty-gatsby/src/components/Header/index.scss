@@ -148,8 +148,11 @@ button:not(:disabled) {
   overflow: scroll;
   position: absolute;
   scrollbar-width: none;
-  top: calc(1rem + 45px);
   transition: all 0.5s ease-in-out;
+  top: calc(80px - 1rem);
+  @media(min-width: 1200px) {
+    top: 52px
+  }
 }
 .languages::-webkit-scrollbar {
   display: none;
@@ -161,13 +164,19 @@ button:not(:disabled) {
   // display: block;
   height: auto;
 }
-.desktop-nav.open .languages.open .languages-wrapper {
-  @media (max-width: 1200px) {
-    position: fixed;
-    left: 1em;
-    bottom: 58px;
+@media (max-width: 1200px) {
+  .desktop-nav.open .languages.open {
+    top: unset;
+    bottom: calc(100% + 1rem);
+  }
+  .desktop-nav .languages{
+    left: -30px;
+  }
+  .languages-toggle svg {
+    transform: rotate(180deg);
   }
 }
+
 
 .languages-wrapper__list {
   width: max-content;
