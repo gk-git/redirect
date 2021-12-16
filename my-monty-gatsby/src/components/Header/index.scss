@@ -53,11 +53,8 @@ header a {
 .locations::-webkit-scrollbar {
   display: none;
 }
-.locations-wrapper__list-location:hover:nth-child(odd) {
-  background: red;
-}
-.locations-wrapper__list-location:hover:nth-child(2n) {
-  background: blue;
+.locations-wrapper__list-location:hover {
+  background: #f3f3f3;
 }
 .locations {
   background: #fff;
@@ -194,11 +191,8 @@ button:not(:disabled) {
   justify-content: center;
 }
 
-.languages-wrapper__list-language:hover:nth-child(odd) {
-  background: red;
-}
-.languages-wrapper__list-language:hover:nth-child(2n) {
-  background: blue;
+.languages-wrapper__list-language:hover {
+  background: #f3f3f3;
 }
 
 .theme-mode {

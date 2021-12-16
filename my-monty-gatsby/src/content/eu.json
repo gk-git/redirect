@@ -1,0 +1,19 @@
+{
+  "languages": [
+    {
+      "name": "English",
+      "image": "english",
+      "slug": "en"
+    },
+    {
+      "name": "Italiano",
+      "image": "italy",
+      "slug": "it"
+    },
+    {
+      "name": "Polskie",
+      "image": "poland",
+      "slug": "pl"
+    }
+  ]
+}

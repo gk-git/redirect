@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "name": "Poland",
+      "slug": "pl",
+      "isGlobal": false,
+      "languages": [
+        {
+          "name": "Polskie",
+          "image": "poland",
+          "slug": "pl",
+          "isDefault": true
+        },
+        {
+          "name": "English",
+          "image": "english",
+          "slug": "en",
+          "isDefault": false
+        },
+        {
+          "name": "Italiano",
+          "image": "italy",
+          "slug": "it",
+          "isDefault": false
+        }
+      ]
+    },
+    {
+      "name": "Italy",
+      "slug": "it",
+      "isGlobal": false,
+      "languages": [
+        {
+          "name": "Italiano",
+          "image": "italy",
+          "slug": "it",
+          "isDefault": true
+        },
+        {
+          "name": "English",
+          "image": "english",
+          "slug": "en",
+          "isDefault": false
+        },
+        {
+          "name": "Polskie",
+          "image": "poland",
+          "slug": "pl",
+          "isDefault": false
+        }
+      ]
+    },
+    {
+      "name": "UK",
+      "slug": "uk",
+      "isGlobal": false,
+      "languages": [
+        {
+          "name": "English",
+          "image": "english",
+          "slug": "en",
+          "isDefault": true
+        },
+        {
+          "name": "Italiano",
+          "image": "italy",
+          "slug": "it",
+          "isDefault": false
+        },
+        {
+          "name": "Polskie",
+          "image": "poland",
+          "slug": "pl",
+          "isDefault": false
+        }
+      ]
+    },
+    {
+      "name": "Global",
+      "slug": "eu",
+      "isGlobal": true,
+
+      "languages": [
+        {
+          "name": "English",
+          "image": "english",
+          "slug": "en",
+          "isDefault": true
+        },
+        {
+          "name": "Italiano",
+          "image": "italy",
+          "slug": "it",
+          "isDefault": false
+        },
+        {
+          "name": "Polskie",
+          "image": "poland",
+          "slug": "pl",
+          "isDefault": false
+        }
+      ]
+    }
+  ]
+}

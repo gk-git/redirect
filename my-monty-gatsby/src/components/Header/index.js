@@ -1,25 +1,29 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
+import RegionsData from '../../content/regions.json'
 import SiteButton from '../atoms/Button/Button'
 import MenuToggleIcon from '../atoms/MenuToggleIcon'
+import CountryImage from '../CountryImage'
 import ArrowDown from '../SVG/ArrowDown'
 import Logo from '../SVG/Logo'
+import Cookies from 'universal-cookie';
+
 import './index.scss'
 
-const Header = ({baseUrl}) => {
+const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
   const [state, setState] = useState({
     isMenuOpen: false,
     isRegionsDropdownOpen: false,
     isLanguagesDropdownOpen: false,
   })
-  
+
   const handleMenuIconClick = () => {
     setState({
       ...state,
       isMenuOpen: !state.isMenuOpen,
     })
   }
-  
+
   const toggleRegionsDropdown = () => {
     console.log('trigger')
     setState({
@@ -33,76 +37,100 @@ const Header = ({baseUrl}) => {
       isLanguagesDropdownOpen: !state.isLanguagesDropdownOpen,
     })
   }
+
+  const getActiveRegion = () => {
+    return RegionsData.regions.find(region => region.slug === activeRegionSlug)
+  }
+  const getRegionsWithoutActive = () => {
+    return RegionsData.regions.filter(region => region.slug !== activeRegionSlug)
+  }
+  const activeRegion = getActiveRegion()
+  const nonActiveRegions = getRegionsWithoutActive()
+
+  const languages = activeRegion.languages;
+
+  const handleLanguageChange = (language) => {
+    const cookies = new Cookies();
+    cookies.set('lang', language, { path: '/', expires: new Date(Date.now() + 2592000) });
+    console.log(cookies.get('lang')); // Pacman
+
+  }
   return (
     <header className="header" id="header">
       <div className="header__container">
         <div className={`desktop-nav ${state.isMenuOpen ? ' open ' : ''}`}>
           <div className="desktop-nav__logo">
             <Link to={`/${baseUrl}/`}>
-              <Logo/>
+              <Logo />
             </Link>
             <div className="arrow-icon" onClick={toggleRegionsDropdown}>
-              <ArrowDown/>
+              <ArrowDown />
             </div>
-            <div className="selected-location">Poland</div>
+            <div className="selected-location">{activeRegion.name}</div>
             <div className={`locations ${state.isRegionsDropdownOpen ? 'open' : ''}`}>
               <div className="locations-wrapper">
                 <ul className="locations-wrapper__list">
-                  <li className="locations-wrapper__list-location"><a href=""> <span className="fw-bolder">My</span>Poland</a>
-                  </li>
-                  <li className="locations-wrapper__list-location"><a href=""> <span className="fw-bolder">My</span>Italy</a>
-                  </li>
+                  {
+                    nonActiveRegions.map(region => {
+                      const defaultLanguage = region.languages.find(language => language.isDefault)
+                      if (region.isGlobal) {
+                        return (
+                          <li className="locations-wrapper__list-location"><Link
+                            to={`/${defaultLanguage.slug}-${region.slug}`}> Global</Link>
+                          </li>
+                        )
+                      }
+                      return (
+                        <li className="locations-wrapper__list-location"><Link
+                          to={`/${defaultLanguage.slug}-${region.slug}`}> <span
+                            className="fw-bolder">My</span>{region.name}</Link>
+                        </li>
+                      )
+                    })
+                  }
+
+
                 </ul>
               </div>
             </div>
           </div>
           <div className="icon-wrapper" onClick={handleMenuIconClick}>
-            <MenuToggleIcon/>
+            <MenuToggleIcon />
           </div>
           <div className="desktop-nav__tabs">
             <Link to={`/${baseUrl}/about`} activeClassName="active">Company</Link>
             <Link to={`/${baseUrl}/about`} activeClassName="active">Features</Link>
             <Link to={`/${baseUrl}/about`} activeClassName="active">Plans</Link>
             <Link to={`/${baseUrl}/about`} activeClassName="active">Help</Link>
-            <div className="menu-pointer"/>
+            <div className="menu-pointer" />
           </div>
           <div className="desktop-nav__right">
             <div className="languages-toggle" onClick={toggleLanguagesDropdown}>
               <svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down"
-                   className="svg-inline--fa fa-chevron-down fa-w-14" role="img" width="10" viewBox="0 0 448 512">
+                className="svg-inline--fa fa-chevron-down fa-w-14" role="img" width="10" viewBox="0 0 448 512">
                 <path
                   d="M207.029 381.476 12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
               </svg>
               <div className="selected-language">
-                <img src="https://mymonty.netlify.app/united-kingdom.2c961602.png" alt="" width="25px"/>
+                <CountryImage name={activeLanguage} />
               </div>
               <div className={`languages ${state.isLanguagesDropdownOpen ? 'open' : ''}`}>
                 <div className="languages-wrapper">
                   <ul className="languages-wrapper__list">
-                    <li className="languages-wrapper__list-language">
-                      <a href="">
-                        <img src="https://mymonty.netlify.app/italy.40456ddd.png" alt="" width="25px"/>
-                        <span>Italiano</span>
-                      </a>
-                    </li>
-                    <li className="languages-wrapper__list-language">
-                      <a href="">
-                        <img src="https://mymonty.netlify.app/france.bcb36584.png" alt="" width="25px"/>
-                        <span>Francais</span>
-                      </a>
-                    </li>
-                    <li className="languages-wrapper__list-language">
-                      <a href="">
-                        <img src="https://mymonty.netlify.app/poland.615b6bc9.png" alt="" width="25px"/>
-                        <span>Polskie</span>
-                      </a>
-                    </li>
-                    <li className="languages-wrapper__list-language">
-                      <a href="">
-                        <img src="https://mymonty.netlify.app/united-kingdom.2c961602.png" alt="" width="25px"/>
-                        <span>English</span>
-                      </a>
-                    </li>
+                    {
+                      languages.map(language => {
+                        return (
+                          <li className="languages-wrapper__list-language">
+                            <Link to={`/${language.slug}-${activeRegionSlug}`} onClick={() => {
+                              handleLanguageChange(language.slug)
+                            }}>
+                              <CountryImage name={language.image} />
+                              <span>{language.name}</span>
+                            </Link>
+                          </li>
+                        )
+                      })
+                    }
                   </ul>
                 </div>
               </div>
