@@ -124,10 +124,7 @@ function isItalyCountry(countryCode) {
 function isPolandCountry(countryCode) {
     return ['PL'].includes(countryCode)
 }
-
-app.get('/', (req, res) => {
-    console.log('req.cookies', req.cookies);
-
+function redirectRequests(req, res) {
     const preferedLang = req.cookies.lang;
     // res.send('Hello World!')
     const clientIp = getClientIP(req);
@@ -165,7 +162,8 @@ app.get('/', (req, res) => {
                 }
             }
         });
-})
+}
+app.get('/', redirectRequests)
 regions.forEach(region => {
     app.get(`/${region.slug}`, function (req, res) {
         console.log('req.cookies', req.cookies)
@@ -177,6 +175,7 @@ regions.forEach(region => {
         }
     })
 })
+app.use(redirectRequests);
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
