@@ -11,10 +11,9 @@ const IndexPage = () => {
   return (
     <DefaultLayout baseUrl={'it-it'} languages={Data.languages} activeLanguage="italy" activeRegionSlug="it">
       <HeroSection backgroundImage={ItalyHeroImage} title="Entra nel nostro gruppo" mainText={
-        `Submit your <span class="hero__title__cv">CV</span> or check out our <span class="hero__title__vacancies">vacancies</span> today
-            on <span class="hero__title__linkedin">LinkedIn</span> and we will reach
-            out to you<span class="break"/> once we find
-            a <span class="hero__title__position">position</span> that fits <span class="break"/> your profile.`
+        `Invia il tuo <span class="hero__title__cv">CV</span> o dai un'occhiata al nostro <span class="hero__title__vacancies">posti vacanti</span>oggi in
+         poi <span class="hero__title__linkedin">LinkedIn</span> e ti contatteremo <span class="break"/>una volta che troviamo
+          a <span class="hero__title__position">posizione</span> Questo va bene <span class="break"/> Il tuo profilo.`
       }/>
       <div className="wrapper">
         <ContactForm/>
