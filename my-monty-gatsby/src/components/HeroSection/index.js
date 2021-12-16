@@ -1,11 +1,11 @@
 import React from 'react'
+import GlobalImage from '../../assets/images/hero/global.webp'
+import './index.scss'
 
-import "./index.scss"
-export default function HeroSection ({ title, text }) {
+export default function HeroSection ({ title, text, backgroundImage = GlobalImage }) {
   return (
     <section id="hero-section" className="hero__section">
-      <div className="hero__img-container">
-        <img src="https://flagcdn.com/h120/pl.webp" alt="Hero Picture" className="hero__img-container__img"/>
+      <div className="hero__img-container" style={{ backgroundImage: `URL(${backgroundImage})` }}>
         <p className="hero__img-container__title" dangerouslySetInnerHTML={{
           __html: title,
         }}/>
