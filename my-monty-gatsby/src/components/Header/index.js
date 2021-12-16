@@ -6,6 +6,8 @@ import MenuToggleIcon from '../atoms/MenuToggleIcon'
 import CountryImage from '../CountryImage'
 import ArrowDown from '../SVG/ArrowDown'
 import Logo from '../SVG/Logo'
+import Cookies from 'universal-cookie';
+
 import './index.scss'
 
 const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
@@ -48,6 +50,9 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
   const languages = activeRegion.languages;
 
   const handleLanguageChange = (language) => {
+    const cookies = new Cookies();
+    cookies.set('lang', language, { path: '/', expires: new Date(Date.now() + 2592000) });
+    console.log(cookies.get('lang')); // Pacman
 
   }
   return (
