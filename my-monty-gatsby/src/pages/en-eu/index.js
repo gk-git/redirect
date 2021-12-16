@@ -21,7 +21,6 @@ const IndexPage = () => {
           make: 'make banking accessible for all',
         }
       }/>
-      }
       <div className="wrapper">
         <ContactForm/>
       </div>
