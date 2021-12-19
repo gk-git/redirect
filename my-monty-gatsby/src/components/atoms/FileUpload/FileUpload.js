@@ -31,7 +31,9 @@ export default function FileUpload ({ label }) {
       input.current.addEventListener('change', handleFileChange, false)
       
       return () => {
-        input.current.removeEventListener('change', handleFileChange, false)
+        if (input && input.current) {
+          input.current.removeEventListener('change', handleFileChange, false)
+        }
       }
     }
   }, [input])
@@ -50,7 +52,9 @@ export default function FileUpload ({ label }) {
       removeFileUpload.current.addEventListener('click', handleRemoveFile, false)
       
       return () => {
-        removeFileUpload.current.removeEventListener('click', handleRemoveFile, false)
+        if (removeFileUpload && removeFileUpload.current) {
+          removeFileUpload.current.removeEventListener('click', handleRemoveFile, false)
+        }
       }
     }
   }, [removeFileUpload])
