@@ -1,7 +1,8 @@
 import React from 'react'
-import './index.scss'
-import SiteInput from '../atoms/Input/Input'
 import SiteButton from '../atoms/Button/Button'
+import FileUpload from '../atoms/FileUpload/FileUpload'
+import SiteInput from '../atoms/Input/Input'
+import './index.scss'
 
 export default function ContactForm ({
                                        title = 'Submit your CV',
@@ -50,9 +51,7 @@ export default function ContactForm ({
           <SiteInput name="information" id="information" label={additionalInformation.label} type="textarea"/>
         </div>
         <div className="careers-form__container">
-          <button className="careers-form__container__cv-btn">
-            {cvUpload.label}
-          </button>
+          <FileUpload label={cvUpload.label}/>
         </div>
         <div className="careers-form__container">
           <SiteButton size="md" type="submit">{submitButton.label}</SiteButton>

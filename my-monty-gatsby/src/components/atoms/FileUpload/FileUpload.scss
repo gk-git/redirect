@@ -1,0 +1,32 @@
+.file-upload {
+  position: relative;
+
+  label {
+    position: relative;
+    font-size: 1.857rem;
+    margin-top: 0.625em;
+    padding: 0.625em 0.3em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    span {
+      padding-bottom: 10px;
+      border-bottom: 1px solid black;
+      line-height: 48px;
+    }
+
+  }
+
+  &__remove {
+    position: absolute;
+    z-index: 2;
+    right: -10px;
+    top: 0;
+    cursor: pointer;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}

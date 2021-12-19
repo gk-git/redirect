@@ -36,37 +36,6 @@
       flex-direction: row;
     }
 
-    &__cv-btn {
-      position: relative;
-      font-size: 1.857rem;
-      margin-top: 0.625em;
-      padding: 0.625em 0.3em;
-      border: none;
-      outline: none;
-      background-color: transparent;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 21px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 207px;
-        height: 2px;
-        background-color: black;
-      }
-    }
-
-    &__submit-btn {
-      border: 0;
-      border-radius: 9999px;
-      background-color: black;
-      color: white;
-      margin-top: 1.875em;
-      padding: 0.8em 2.6em;
-      font-size: 1.25rem;
-    }
-
   }
 
 }
