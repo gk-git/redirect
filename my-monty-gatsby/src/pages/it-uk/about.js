@@ -6,7 +6,7 @@ import DefaultLayout from '../../Layouts/DefaultLayout'
 export default function AboutPage () {
   
   return (
-    <DefaultLayout baseUrl={'it-uk'} languages={Data.languages} activeLanguage="italy" activeRegionSlug="uk">
+    <DefaultLayout baseUrl={'it-uk'} languages={Data.languages} activeLanguage="it" activeRegionSlug="uk">
       <TextWithColor/>
     </DefaultLayout>
   )

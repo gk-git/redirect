@@ -9,7 +9,7 @@ import DefaultLayout from '../../Layouts/DefaultLayout'
 // markup
 const IndexPage = () => {
   return (
-    <DefaultLayout baseUrl={'pl-pl'} languages={Data.languages} activeLanguage="poland" activeRegionSlug="pl">
+    <DefaultLayout baseUrl={'pl-pl'} languages={Data.languages} activeLanguage="pl" activeRegionSlug="pl">
       <HeroSection backgroundImage={PolandHeroImage} title="Dołącz do naszej drużyny" mainText={
         `Prześlij swoje <span class="hero__title__cv">CV</span> lub sprawdź nasze <span class="hero__title__vacancies">wakaty</span> dzisiaj <span
  class="hero__title__linkedin">LinkedIn</span> i skontaktujemy się z Tobą <span class="break"/> kiedy znajdziemy <span

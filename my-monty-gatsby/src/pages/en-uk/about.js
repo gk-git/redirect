@@ -6,7 +6,7 @@ import Data from '../../content/pl.json';
 export default function AboutPage() {
 
   return (
-    <DefaultLayout baseUrl={'en-uk'} languages={Data.languages} activeLanguage="english" activeRegionSlug="uk" >
+    <DefaultLayout baseUrl={'en-uk'} languages={Data.languages} activeLanguage="en" activeRegionSlug="uk" >
       <TextWithColor />
     </DefaultLayout>
   )

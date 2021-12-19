@@ -9,7 +9,7 @@ import DefaultLayout from '../../Layouts/DefaultLayout'
 const IndexPage = () => {
   
   return (
-    <DefaultLayout baseUrl={'en-it'} activeLanguage="english" activeRegionSlug="it">
+    <DefaultLayout baseUrl={'en-it'} activeLanguage="en" activeRegionSlug="it">
       <HeroSection backgroundImage={ItalyHeroImage} title="Join our team" mainText={
         `Submit your <span class="hero__title__cv">CV</span> or check out our <span class="hero__title__vacancies">vacancies</span> today
             on <span class="hero__title__linkedin">LinkedIn</span> and we will reach

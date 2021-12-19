@@ -9,9 +9,9 @@ export default function CountryImage({name}){
   return (
     <>
       {
-        name === 'france' ?  <img src={FranceImage} alt="France" width="25px"/>
-          : (name === 'italy' ?  <img src={ItalyImage} alt="Italy" width="25px"/> :
-            (name === 'poland' ? <img src={PolandImage} alt="Poland" width="25px"/>:
+        name === 'fr' ?  <img src={FranceImage} alt="France" width="25px"/>
+          : (name === 'it' ?  <img src={ItalyImage} alt="Italy" width="25px"/> :
+            (name === 'pl' ? <img src={PolandImage} alt="Poland" width="25px"/>:
                 <img src={UnitedKingdomImage} alt="English" width="25px"/>
             )
           )
