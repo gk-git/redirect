@@ -1,0 +1,55 @@
+.site-banner {
+  border-radius: 20px;
+  background-color: #EAF3FC;
+  display: grid;
+  grid-template-columns: 6fr 1fr 5fr;
+  grid-template-areas: "content . visual";
+  margin-bottom: 3.75em;
+  overflow: hidden;
+
+  &.inverted {
+    grid-template-areas: "visual . content";
+    grid-template-columns: 5fr 1fr 6fr;
+
+    .site-banner {
+      &__content {
+        padding: 3.75em 3.75em 3.75em 0;
+      }
+    }
+
+  }
+
+  &:hover {
+    .site-banner__visual img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    grid-area: content;
+    padding: 3.75em 0 3.75em 3.75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 2.25rem;
+      line-height: 3.125rem;
+      color: #0D0D0D;
+    }
+  }
+
+  &__visual {
+    grid-area: visual;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-self: end;
+
+    img {
+      transition: all .5s ease-in-out;
+    }
+  }
+}

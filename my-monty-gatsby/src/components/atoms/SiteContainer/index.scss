@@ -1,0 +1,5 @@
+@import "../../../brand/global/mixin";
+
+.site-container {
+  @include container;
+}

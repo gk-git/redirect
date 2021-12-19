@@ -2,6 +2,7 @@ import * as React from 'react'
 import GlobalHeroImage from '../../assets/images/hero/global.webp'
 
 import '../../brand/app.scss'
+import SiteContainer from '../../components/atoms/SiteContainer'
 import ContactForm from '../../components/ContactForm'
 import HeroSection from '../../components/HeroSection'
 import Data from '../../content/pl.json'
@@ -21,7 +22,7 @@ const IndexPage = () => {
           make: 'make banking accessible for all',
         }
       }/>
-      <div className="wrapper">
+      <SiteContainer>
         <ContactForm title="Submit your CV"
                      firstName={{
                        label: 'First Name',
@@ -50,7 +51,7 @@ const IndexPage = () => {
                        label: 'Submit',
                      }}
         />
-      </div>
+      </SiteContainer>
     </DefaultLayout>
   )
 }

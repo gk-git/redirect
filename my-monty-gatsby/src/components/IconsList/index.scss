@@ -1,0 +1,28 @@
+.icons-list {
+  padding-top: 2.5em;
+  color: #494646;
+  svg {
+    fill: #494646;
+    width: 1.5em;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #494646;
+    padding-bottom: 1.375em;
+  }
+
+  &__items {
+    grid-gap: 0.5em;
+    display: grid;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1.5em 1fr;
+    align-items: center;
+    grid-gap: 0.5em;
+  }
+}
