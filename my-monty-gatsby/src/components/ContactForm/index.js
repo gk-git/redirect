@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.scss'
+import SiteInput from '../atoms/Input/Input'
 
 export default function ContactForm ({
                                        title = 'Submit your CV',
@@ -37,34 +38,15 @@ export default function ContactForm ({
           <p className="careers-form__title">{title}</p>
         </div>
         <div className="careers-form__container">
-          <div className="careers-form__container__input-container">
-            <label htmlFor="firstName">{firstName.label}</label>
-            <input type="text" id="firstName"/>
-          </div>
-          <div className="careers-form__container__input-container">
-            <label htmlFor="lastName">{lastName.label}</label>
-            <input type="text" id="lastName"/>
-          </div>
+          <SiteInput name="first_name" id="first_name" label={firstName.label} type="text"/>
+          <SiteInput name="last_name" id="last_name" label={lastName.label} type="text"/>
         </div>
         <div className="careers-form__container">
-          <div className="careers-form__container__input-container">
-            <label htmlFor="email">{emailAddress.label}</label>
-            <input type="email" id="email"/>
-          </div>
-          <div className="careers-form__container__input-container">
-            <label htmlFor="position">{position.label}</label>
-            <input type="text" id="position"/>
-          </div>
+          <SiteInput name="email" id="email" label={emailAddress.label} type="email"/>
+          <SiteInput name="position" id="position" label={position.label} type="text"/>
         </div>
         <div className="careers-form__container">
-          <div className="careers-form__container__input-container">
-            <label htmlFor="information">{additionalInformation.label}</label>
-            <textarea
-              id="information"
-              rows={8}
-              className="careers-form__container__input-container__textarea"
-            />
-          </div>
+          <SiteInput name="information" id="information" label={additionalInformation.label} type="textarea"/>
         </div>
         <div className="careers-form__container">
           <button className="careers-form__container__cv-btn">

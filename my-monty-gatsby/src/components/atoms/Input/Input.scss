@@ -1,0 +1,33 @@
+.site-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  justify-content: space-between;
+  width: 100%;
+
+  &__label {
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding-left: 1.5rem;
+  }
+
+  &__input {
+    border: 0;
+    border-radius: 50rem;
+    background-color: white;
+    padding: 0.7em 1.5em;
+    font-size: 1.5rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    border: 0;
+    font-size: 1.25rem;
+    border-radius: 15px;
+    background-color: white;
+    padding: 0.7em 1.5em;
+  }
+}
