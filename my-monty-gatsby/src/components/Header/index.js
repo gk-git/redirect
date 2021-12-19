@@ -34,6 +34,10 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
   
     } else {
       if (state.isMobile === false) {
+        setState({
+          ...state,
+          isMobile: true,
+        })
         console.log('windowWidth', {
           isMobile: true,
           windowWidth,
