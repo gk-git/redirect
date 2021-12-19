@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.scss'
 import SiteInput from '../atoms/Input/Input'
+import SiteButton from '../atoms/Button/Button'
 
 export default function ContactForm ({
                                        title = 'Submit your CV',
