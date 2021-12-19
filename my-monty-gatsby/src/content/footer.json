@@ -1,5 +1,5 @@
 {
-  "english": {
+  "en": {
     "subscribe": {
       "title": "Subscribe to our newsletter",
       "description": "Enter you email to get the latest news from MyMonty",
@@ -9,9 +9,12 @@
       "submitButton": {
         "label": "Submit"
       }
+    },
+    "company": {
+      "title": "Company"
     }
   },
-  "italy": {
+  "it": {
     "subscribe": {
       "title": "Iscriviti alla nostra Newsletter",
       "description": "Inserisci la tua email per ricevere le ultime notizie da MyMonty",
@@ -23,7 +26,7 @@
       }
     }
   },
-  "poland": {
+  "pl": {
     "subscribe": {
       "title": "Zapisz się do naszego newslettera",
       "description": "Wpisz swój adres e-mail, aby otrzymywać najnowsze wiadomości z MyMonty",
