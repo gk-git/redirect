@@ -142,6 +142,7 @@
 
         svg {
           transform: rotate(180deg);
+          margin-right: 0.5em;
           @media (min-width: 1200px) {
             transform: rotate(0);
           }
