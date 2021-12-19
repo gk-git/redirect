@@ -111,17 +111,21 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
               <div className="languages-wrapper">
                 <ul className="languages-wrapper__list">
                   {
-                    languages.map((language, index) => {
-                      return (
-                        <li key={index} className="languages-wrapper__list-language">
-                          <Link to={`/${language.slug}-${activeRegionSlug}`} onClick={() => {
-                            handleLanguageChange(language.slug)
-                          }}>
-                            <CountryImage name={language.image}/>
-                            <span>{language.name}</span>
-                          </Link>
-                        </li>
-                      )
+                    languages.filter(language => {
+                        return language.slug !== activeLanguage
+                      })
+                      .concat(languages.filter(language => language.slug === activeLanguage))
+                      .map((language, index) => {
+                        return (
+                          <li key={index} className="languages-wrapper__list-language">
+                            <Link to={`/${language.slug}-${activeRegionSlug}`} onClick={() => {
+                              handleLanguageChange(language.slug)
+                            }}>
+                              <CountryImage name={language.slug}/>
+                              <span>{language.name}</span>
+                            </Link>
+                          </li>
+                        )
                     })
                   }
                 </ul>
