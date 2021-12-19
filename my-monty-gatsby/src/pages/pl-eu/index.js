@@ -11,8 +11,8 @@ const IndexPage = () => {
   return (
     <DefaultLayout baseUrl={'pl-eu'} languages={Data.languages} activeLanguage="pl" activeRegionSlug="eu">
       <HeroSection backgroundImage={GlobalHeroImage} title="Dołącz do naszej drużyny" mainText={
-        `Prześlij swoje <span class="hero__title__cv">CV</span> lub sprawdź nasze <span class="hero__title__vacancies">wakaty</span> dzisiaj <span
- class="hero__title__linkedin">LinkedIn</span> i skontaktujemy się z Tobą <span class="break"/> kiedy znajdziemy <span
+        `Prześlij swoje <span class="hero__title__cv">CV</span> lub sprawdź nasze <span class="hero__title__vacancies">wakaty</span> dzisiaj <a
+ class="hero__title__linkedin">LinkedIn</a> i skontaktujemy się z Tobą <span class="break"/> kiedy znajdziemy <span
  class="hero__title__position">pozycja</span> to pasuje <span class="break"/> twój profil.`
       } subTitle={
         {
