@@ -47,47 +47,4 @@
   }
 }
 
-.newsletter-form {
-  font-size: 1rem;
-  &__title {
-    padding-bottom: 2rem;
-    font-size: 1.125rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 1.25rem;
-  }
-  &__description {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    color: #e6e7e8;
-    padding-bottom: 3rem;
-    max-width: 270px;
-  }
-  &__form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap:1.25em;
-    width:100%;
-    input:not([type='submit']) {
-      border: 0;
-      border-radius: 50rem;
-      background-color: white;
-      padding: 0.3em 1.5em;
-      font-size: 1.5rem;
-      width: 100%;
-      max-width:276px;
-    }
-    input[type='submit'] {
-      border:0;
-      background: #6c90bb;
-      border-radius: 35px;
-      padding: 0.3em  1.5em;
-      color: #fff;
-      width: max-content;
-      &:hover {
-        background-color: #346edf;
-      }
-    }
-  }
-}
+
