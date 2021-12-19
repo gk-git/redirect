@@ -1,9 +1,11 @@
 import React from 'react'
 import FooterContentFrom from '../../content/footer.json'
 import "./index.scss"
+import { useSiteContext } from '../../context/SiteContext'
 
-export default function NewsletterForm({activeLanguage}) {
-  const { subscribe } = FooterContentFrom[activeLanguage];
+export default function NewsletterForm() {
+  const siteContext = useSiteContext();
+  const { subscribe } = FooterContentFrom[siteContext.activeLanguage];
   
   return (
     <div className="newsletter-form">

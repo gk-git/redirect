@@ -1,14 +1,13 @@
 import React from 'react'
 import "./index.scss";
-
-import FooterContentFrom from "../../content/footer.json";
 import NewsletterForm from '../NewsletterForm'
-export default function Footer({activeLanguage}) {
+
+export default function Footer() {
   return (
     <footer className="footer-section">
       <div className="footer-section__container">
         <div className="footer-section__wrapper">
-          <NewsletterForm activeLanguage={activeLanguage}/>
+          <NewsletterForm />
           <div className="navigations">
             <div className="navigation">
               <h5 className="navigation__title">Company</h5>
