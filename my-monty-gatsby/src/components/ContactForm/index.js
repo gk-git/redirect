@@ -54,7 +54,7 @@ export default function ContactForm ({
           </button>
         </div>
         <div className="careers-form__container">
-          <button className="careers-form__container__submit-btn">{submitButton.label}</button>
+          <SiteButton size="md" type="submit">{submitButton.label}</SiteButton>
         </div>
       </form>
     </section>

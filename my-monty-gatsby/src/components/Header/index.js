@@ -88,13 +88,15 @@ const Header = ({ baseUrl, activeLanguage, activeRegionSlug }) => {
     return (
       <>
   
-        <div className="desktop-nav__tabs">
+        <ul className="desktop-nav__tabs">
+          <li>
             <Link to={`/${baseUrl}/about`} activeClassName="active">Company</Link>
-            <Link to={`/${baseUrl}/about`} activeClassName="active">Features</Link>
-            <Link to={`/${baseUrl}/about`} activeClassName="active">Plans</Link>
-            <Link to={`/${baseUrl}/about`} activeClassName="active">Help</Link>
-            <div className="menu-pointer"/>
-        </div>
+          </li>
+          <li><Link to={`/${baseUrl}/about`} activeClassName="active">Features</Link></li>
+          <li><Link to={`/${baseUrl}/about`} activeClassName="active">Plans</Link></li>
+          <li><Link to={`/${baseUrl}/about`} activeClassName="active">Help</Link></li>
+          <div className="menu-pointer"/>
+        </ul>
         <div className="desktop-nav__right">
           <div className="languages-toggle" onClick={toggleLanguagesDropdown}>
             <svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down"
